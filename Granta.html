@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест-верстка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header" id="up">
+        <div class="header__container container">
+            <div class="header_logo logo">
+                АВТОСАЛОН
+            </div>
+            <nav class="header__nav nav">
+                    <a href="#" class="nav__item">Бестселлеры </a>
+                    <a href="#" class="nav__item">Подборки</a>
+                    <a href="#" class="nav__item">Авторы</a>
+                    <a href="#" class="nav__item">Дайджест</a>
+                    <a href="#" class="nav__item">Подписка</a>
+                    <a href="#" class="nav__item">Выбор редакции</a>
+            </nav>
+            <a href="#" class="header__auto-drive">Записаться на автодрайв</a>
+        </div>
+    </header>
+    <!-- /Шапка сайта -->
+    <div class="links">
+        <a href="Granta.html">Lada Granta</a>
+        <a href="Largus.html">Lada Largus</a>
+        <a href="Vesta.html">Lada Vesta</a>
+    </div>
+        <h1 class='title'>Lada Granta</h1>
+        <a href="#up" class="arrow-up"> <img src="img/return.png" alt="return"></a>
+    
+        <section class="modal-window">
+            <div class="modal-window__body">
+                <div class="body-header">
+                    <div class="body-header__close-modal">
+                        <div class="close-modal__line"></div>
+                        <div class="close-modal__line"></div>
+                    </div>
+                    <h2 class="body-header__title">Автодрайв</h2>
+                </div>
+                <form class="body-form form">
+                    <div class="body-form-inp">
+                        <label for="inp-name" class="body-form-inp__label">ФИО</label>
+                        <input type="text" 
+                                class="body-form-inp__inp" 
+                                id="inp-name" 
+                                placeholder="Введите ФИО" 
+                                name="fio" 
+                                pattern="[а-я\sА-ЯёЁ]*"
+                                minlength="5"
+                                required>
+                    </div>
+                    <div class="body-form-inp">
+                        <label for="inp-email" class="body-form-inp__label">Почта</label>
+                        <input type="email" 
+                                class="body-form-inp__inp" 
+                                id="inp-email" 
+                                placeholder="Введите почту" 
+                                name="email" 
+                                required>
+                    </div>
+                    <div class="body-form-inp">
+                        <label for="inp-pass" class="body-form-inp__label">Номер телефона</label>
+                        <input type="tel"
+                                class="body-form-inp__inp" 
+                                id="inp-pass" 
+                                placeholder="9(___)___-__-__" 
+                                name="tel" pattern="[0-9]{10}" 
+                                required>
+
+                        <input type="hidden" 
+                                name="car" 
+                                value="" 
+                                class="body-form-inp__inp hidden-inp">
+                    </div>
+                    <button type="submit" class="body-form__btn">Записаться</button>
+                </form>
+            </div>
+        </section>
+
+    <script src="js/app.js"></script>i
+</body>
+</html>
