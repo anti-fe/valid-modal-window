@@ -29,20 +29,14 @@ document.body.addEventListener('click', (e)=> {
 
 hiddenInp.setAttribute('value',title);
 
-formBtn.addEventListener('click', ()=> {
+formBtn.addEventListener('click', (e)=> {
+    // e.preventDefault();
     let dataForm = new FormData(form);
-    dataForm = Array.from(dataForm);
+    let dataUser = [];
     dataForm.forEach(item=>{
-        if(localStorage.getItem('fio') == item[1]) {
-            let fullName = inpsForm[0];
-            let tel = inpsForm[1];
-
-            fullName.innerHTML = '';
-            tel.innerHTML = '';
-        } else {
-            localStorage.setItem(item[0], item[1]);
-        }
+        dataUser.push(item);
     })
+    localStorage.setItem('dataUser', JSON.stringify({...dataUser}));
 })
 
 
