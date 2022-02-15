@@ -9,6 +9,10 @@ const title = document.querySelector('.title').innerHTML;
 
 const inpsForm = document.querySelectorAll('.body-form-inp__inp');
 
+let dataUsers = localStorage.getItem('dataUsers') ? [JSON.parse(localStorage.getItem('dataUsers'))] : [];
+
+console.log(dataUsers);
+
 autoDrive.addEventListener('click', ()=> {
     modalWindow.style.display = 'flex';
     document.body.style.overflowY = 'hidden';
@@ -30,13 +34,22 @@ document.body.addEventListener('click', (e)=> {
 hiddenInp.setAttribute('value',title);
 
 formBtn.addEventListener('click', (e)=> {
-    // e.preventDefault();
+    e.preventDefault();
     let dataForm = new FormData(form);
-    let dataUser = [];
-    dataForm.forEach(item=>{
-        dataUser.push(item);
-    })
-    localStorage.setItem('dataUser', JSON.stringify({...dataUser}));
+    dataForm = Array.from(dataForm);
+    console.log(dataForm);
+    let user = {};
+
+    user['fio'] = dataForm[0][1];
+    user['email'] = dataForm[1][1];
+    user['tel'] = dataForm[2][1];
+    user['car'] = dataForm[3][1];
+
+    dataUsers.push(user);
+    
+    localStorage.setItem('dataUsers', JSON.stringify(dataUsers));
 })
 
-
+dataUsers.forEach((item)=>{
+    console.log(item);
+})
